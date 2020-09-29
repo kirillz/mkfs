@@ -1,0 +1,56 @@
+<!DOCTYPE HTML SYSTEM>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="httpsrv.css" />
+
+    <script src="request.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        var rtc_value = new Array(3);
+        var data_received = 0;
+
+        function parse_vars(data)
+        {
+            var parsed = data.split("\n");
+
+            rtc_value[0] = parsed[0];
+            rtc_value[1] = parsed[1];
+            rtc_value[2] = parsed[2];
+
+            time.innerHTML = check_time(rtc_value[0])+":"+check_time(rtc_value[1])+":"+check_time(rtc_value[2]);
+        }
+
+        function loop()
+        {
+            if (!data_received)
+            {
+                 make_request("rtcdata.cgi");
+            }
+            setTimeout("loop()", 1000);
+        }
+
+        function check_time(i)
+        {
+            if (i < 10)
+            {
+                i = "0" + i;
+            }
+            return i;
+        }
+
+        window.onload = loop;
+    </script>
+<title>KSDK HTTP пример сервера</title>
+
+</head>
+
+<body>
+    <h2>Пример с опросом</h2>
+    <p>
+        На этой странице демонстрируется периодический опрос сервера с использованием CGI и JavaScript. Каждую секунду системное время считывается с сервера и отображается ниже в формате ЧЧ: ММ: СС:    </p>
+    <div id="time" class="rtc_data">
+        00:00:00
+    </div>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html SYSTEM>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="httpsrv.css" />
+    <title>KSDK HTTP пример сервера</title>
+  </head>
+
+  <body>
+    <h2>Пример с SSI</h2>
+    <p>
+      На этой странице демонстрируются включения на стороне сервера путем вставки времени и даты
+      сборки проекта: <br />
+      Приложение было построено на <b><%date_time:date%></b> в <b><%date_time:time%></b>.
+    </p>
+  </body>
+</html>
