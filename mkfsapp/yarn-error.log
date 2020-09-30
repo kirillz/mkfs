@@ -1,0 +1,59 @@
+Arguments: 
+  /usr/bin/node /usr/bin/yarn add autprefixer
+
+PATH: 
+  /home/icefox/.rbenv/shims:/home/icefox/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/opt/android-sdk/platform-tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/icefox/Android/Sdk/emulator:/home/icefox/Android/Sdk/tools:/home/icefox/Android/Sdk/tools/bin:/home/icefox/Android/Sdk/platform-tools
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  14.10.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/autprefixer: Not found
+      at Request.params.callback [as _callback] (/usr/lib/node_modules/yarn/lib/cli.js:66988:18)
+      at Request.self.callback (/usr/lib/node_modules/yarn/lib/cli.js:140662:22)
+      at Request.emit (events.js:314:20)
+      at Request.<anonymous> (/usr/lib/node_modules/yarn/lib/cli.js:141634:10)
+      at Request.emit (events.js:314:20)
+      at IncomingMessage.<anonymous> (/usr/lib/node_modules/yarn/lib/cli.js:141556:12)
+      at Object.onceWrapper (events.js:420:28)
+      at IncomingMessage.emit (events.js:326:22)
+      at endReadableNT (_stream_readable.js:1308:12)
+      at processTicksAndRejections (internal/process/task_queues.js:80:21)
+
+npm manifest: 
+  {
+    "name": "mkfsapp",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+      "start": "yarn build:css && node ./bin/www",
+      "build:css": "postcss public/stylesheets/tailwind.css -o public/stylesheets/style.css",
+      "dev": "yarn build:css && nodemon ./bin/www"
+    },
+    "dependencies": {
+      "cookie-parser": "~1.4.4",
+      "debug": "~2.6.9",
+      "express": "~4.16.1",
+      "hbs": "^4.1.1",
+      "http-errors": "~1.6.3",
+      "morgan": "~1.9.1",
+      "node-sass-middleware": "0.11.0"
+    },
+    "devDependencies": {
+      "chalk": "^4.1.0",
+      "nodemon": "^2.0.4",
+      "tailwindcss": "^1.8.10"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
