@@ -1,3 +1,4 @@
+![GitHub release](https://img.shields.io/github/release/kirillz/mkfs.svg)  
 ###  Описание  
 
 [Посмотреть ДЕМО (БЫЛО/СТАЛО)](https://kirillz.github.io/mkfs)  
