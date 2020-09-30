@@ -1,2 +1,4 @@
 
 .idea/
+/mkfsapp/node_modules/
+/mkfsapp/yarn-error.log
