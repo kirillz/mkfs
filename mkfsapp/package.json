@@ -1,0 +1,26 @@
+{
+  "name": "mkfsapp",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "npm build:css && node ./bin/www",
+    "build:css": "npx tailwindcss build ./public/stylesheets/source.css -o ./public/stylesheets/style.css",
+    "dev": "yarn build:css && nodemon ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "hbs": "^4.1.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "node-sass-middleware": "0.11.0",
+    "postcss": "^8.1.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.0.1",
+    "chalk": "^4.1.0",
+    "nodemon": "^2.0.4",
+    "tailwindcss": "^1.8.10"
+  }
+}
