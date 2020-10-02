@@ -2,3 +2,5 @@
 .idea/
 /mkfsapp/node_modules/
 /mkfsapp/yarn-error.log
+/mkfsapp/data/db/
+/node_modules/

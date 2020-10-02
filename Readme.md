@@ -59,6 +59,8 @@ mkfs
 или PHPStorm необходимо включить Stylelint в ```Languages & Frameworks - Style Sheets - Stylelint``` (ошибки будут исправлены автоматически при сохранении файла)
 * ```yarn run dev``` - запуск сервера для разработки проекта  
 * ```yarn run start``` - просто запуск сервера для работы  
+* ```yarn run docker:start``` - запускает контейнеры MongoDB и Mongo-Express (веб-админ панель Mongo [http://localhost:8081](http://localhost:8081))  командой `docker-compose up`
+* ```yarn run docker:stop``` - останавливает запущенные контейнеры 
 
 ## :envelope: Контакты
 * ~~ВКонтакте~~
