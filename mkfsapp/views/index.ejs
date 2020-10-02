@@ -122,7 +122,48 @@
 
       <div class="flex flex-wrap mt-1">
         <div class="container w-full pr-0 lg:pr-2" x-data="{ tab: 'tab1' }">
+          <!-- Блок управления -->
+          <div class="flex flex-row">
+            <div class="max-w-sm rounded overflow-hidden shadow-lg mb-2 bg-purple-100">
+              <div class="inline-flex px-6 pt-2 pb-2">
 
+                <button class="bg-red-700 text-white hover:bg-red-600 hover:text-gray-200 font-bold py-2 px-4 rounded-l inline-flex items-center">
+                  <svg class="fill-current w-4 h-4 mr-2 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                  <!--                <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>-->
+                  <span class="text-black-300 hover:text-white-600">1</span>
+                </button>
+                <button class="bg-red-200 hover:bg-red-300 hover:text-white text-gray-800 font-bold py-2 px-4 rounded-r inline-flex items-center">
+                  <svg class="fill-current w-4 h-4 mr-2 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                  <span>2</span>
+                </button>
+                <button class="bg-red-800 hover:bg-red-700 hover:text-white text-gray-100 font-bold py-2 px-4 ml-4 rounded inline-flex items-center">
+<!--                  <svg class="fill-current w-4 h-4 mr-2 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>-->
+                  <span>Х</span>
+                </button>
+
+
+              </div>
+            </div>
+            <div class="max-w-sm rounded overflow-hidden shadow-lg mb-2 bg-purple-100">
+              <div class="inline-flex px-6 pt-2 pb-2">
+
+                <button class="bg-red-700 text-white hover:bg-red-600 hover:text-gray-200 font-bold py-2 px-4 rounded-l inline-flex items-center">
+                  <svg class="fill-current w-4 h-4 mr-2 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                  <!--                <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>-->
+                  <span class="text-black-300 hover:text-white-600">1</span>
+                </button>
+                <button class="bg-red-200 hover:bg-red-300 hover:text-white text-gray-800 font-bold py-2 px-4 rounded-r inline-flex items-center">
+                  <svg class="fill-current w-4 h-4 mr-2 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                  <span>2</span>
+                </button>
+
+
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Блок графики -->
           <ul class="flex border-b">
             <li class="-mb-px mr-1">
               <a :class="{'border-l border-t border-r rounded-t' : tab === 'tab1'}"
