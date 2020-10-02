@@ -1,26 +1,28 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var sassMiddleware = require('node-sass-middleware');
-var MongoClient = require('mongodb').MongoClient;
-var bodyParser = require('body-parser');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const sassMiddleware = require('node-sass-middleware');
+const inject = require('require-all');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var noteRouter = require('./routes/notes');
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
+const noteRouter = require('./routes/notes');
 
-var app = express();
-var db;
+const router = express.Router;
+const app = express();
+const db = mongoose.connection;
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 
 app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(sassMiddleware({
@@ -34,7 +36,25 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/notes', noteRouter);
+try {
+  const controllers = inject(__dirname + '/controllers');
+  const actions = inject(__dirname + '/actions');
+  const models = inject(__dirname + '/models');
 
+  mongoose.connect('mongodb://localhost:27017/mkfs', {useNewUrlParser: true, useUnifiedTopology: true });
+
+  db.on('error', console.error.bind(console, 'connection error:'));
+  db.once('open', function() {
+    console.info('База Данных - connected!')
+  });
+
+  for (const name in controllers) {
+    app.use(`/${name}`, controllers[name]({router, actions, models}));
+  }
+}
+catch (e) {
+  console.error(e);
+}
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

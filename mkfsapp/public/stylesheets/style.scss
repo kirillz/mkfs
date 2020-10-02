@@ -1,0 +1,19 @@
+.switcher {
+
+}
+label {
+  padding: 10px 20px 0;
+}
+
+/* Cwitcher */
+/* CHECKBOX TOGGLE SWITCH */
+/* @apply rules for documentation, these do not work as inline style */
+.toggle-checkbox:checked {
+  @apply: right-0 border-blue-600;
+  right: 0;
+  border-color: #686ad3;
+}
+.toggle-checkbox:checked + .toggle-label {
+  @apply: bg-blue-400;
+  background-color: #8598f1;
+}

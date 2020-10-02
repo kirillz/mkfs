@@ -7,7 +7,7 @@
     "build:css": "npx tailwindcss build ./public/stylesheets/source.css -o ./public/stylesheets/style.css",
     "start:docker": "docker-compose up > /dev/null 2>&1 &",
     "stop:docker": "docker-compose down",
-    "dev": "yarn build:css && yarn start:docker && nodemon ./bin/www"
+    "dev": "yarn start:docker && yarn build:css && nodemon ./bin/www"
   },
   "dependencies": {
     "alpinejs": "^2.7.0",
@@ -28,6 +28,7 @@
     "nodemon": "^2.0.4",
     "postcss": "^8.1.1",
     "postcss-cli": "^8.0.0",
+    "require-all": "^3.0.0",
     "tailwindcss": "^1.8.10"
   }
 }
