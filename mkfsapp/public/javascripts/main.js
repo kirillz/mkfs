@@ -1,13 +1,19 @@
-document.getElementById('mySwitch').addEventListener('click',function() {
-    let btnA = document.getElementById('btnA');
-    let btnB = document.getElementById('btnB');
-    if (btnA.classList.contains('switcher')) {
-        document.getElementById('btnA').classList.remove('opacity-50','cursor-not-allowed')
-        document.getElementById('btnB').classList.add('opacity-50','cursor-not-allowed')
-    } else if (btnB.classList.contains('switcher')) {
-        document.getElementById('btnB').classList.remove('opacity-50','cursor-not-allowed')
-        document.getElementById('btnA').classList.add('opacity-50','cursor-not-allowed')
-    }
-})
-const A = 12345
-console.log(A)
+
+const buttons = Array.from(document.querySelectorAll(".btn-sw"));
+
+const toggleClass = (e) => {
+  for (let el of buttons) {
+    el.classList.remove("selected");
+  }
+  e.currentTarget.classList.add("selected");
+  if (
+    e.currentTarget.classList.contains("selected") === true
+      ? e.currentTarget.classList.add("opacity-50", "cursor-not-allowed")
+      : e.currentTarget.classList.remove("opacity-50", "cursor-not-allowed")
+  )
+    return e;
+};
+for (let el of buttons) {
+  el.addEventListener("click", toggleClass);
+}
+
