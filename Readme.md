@@ -7,10 +7,12 @@
 
 
 Новый интерфейс реализовывался следующими технологиями: 
+
 Backend:  
 -  [Express](https://expressjs.com/) Быстрый, простой, минималистичный веб-фреймворк для Node.js  
 -  [MongoDB](https://www.mongodb.com/) MongoDB - это распределенная база данных общего назначения на основе документов.  
 -  [Docker+docker compose](https://www.youtube.com/watch?v=omi_amBXC84) видео ответ почему.  
+
 Frontend:  
 -  [Alpine.js](https://github.com/alpinejs/alpine) Предлагает реактивный и декларативный характер больших фреймворков, таких, как Vue или React, по гораздо более низкой "цене".  
 -  [TailwindCSS](https://tailwindcss.com/) Большинство фреймворков CSS делают слишком много. Tailwind отличается.  

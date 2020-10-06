@@ -1,6 +1,7 @@
 label {
   padding: 10px 20px 0; }
 
+
 /* Cwitcher */
 /* CHECKBOX TOGGLE SWITCH */
 /* @apply rules for documentation, these do not work as inline style */
@@ -12,5 +13,6 @@ label {
 .toggle-checkbox:checked + .toggle-label {
   @apply : bg-blue-400;
   background-color: #8598f1; }
+
 
 /*# sourceMappingURL=style.css.map */

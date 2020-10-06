@@ -1,3 +1,4 @@
+
 const buttons = Array.from(document.querySelectorAll(".btn-sw"));
 
 const toggleClass = (e) => {
@@ -15,3 +16,4 @@ const toggleClass = (e) => {
 for (let el of buttons) {
   el.addEventListener("click", toggleClass);
 }
+

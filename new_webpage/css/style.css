@@ -1,6 +1,6 @@
 .switcher {
-
 }
+
 label {
     padding: 10px 20px 0;
 }
@@ -16,4 +16,5 @@ label {
 .toggle-checkbox:checked + .toggle-label {
     @apply: bg-blue-400;
     background-color: #8598f1;
+
 }
